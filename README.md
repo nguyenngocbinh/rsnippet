@@ -1,36 +1,44 @@
-# rsnippet
-# ggplot
-# ------------------------------------------------------------------
+---
+title: "R snippets"
+output: html_notebook
+---
 
-scale_y_continuous(label=scales::comma)+
-  scale_x_date(date_breaks = "2 month",
-               date_labels = "%m-%Y")+
-  theme(legend.title = element_blank(),
+
+# ggplot
+
+## add hrbrtheme
+
+  - scale_y_comma()
+  - theme_ipsum_rc() 
+
+## format axis
+
+- scale_y_continuous(label=scales::comma)
+- scale_x_date(date_breaks = "2 month", date_labels = "%m-%Y")
+- theme(legend.title = element_blank(),
         legend.position = "bottom",
         axis.text.x = element_text(angle = 30))
 
-# ------------------------------------------------------------------
-# hrbrtheme
-ggplot(aes(x = cnt))+
-  geom_histogram(bins = 18)+ # bins = 24
-  labs(title = "Tong thoi gian",
-       subtitle = "don vi",
-       x = "So luong",
-       y = "So quan sat")+
-  scale_y_comma()+
-  theme_ipsum_rc()+
-  facet_wrap(~ bi_card_group, nrow = 2)
+## format axis text
 
-# ------------------------------------------------------------------
+
+```{r}
 theme(axis.text.x = element_text(size = 14), axis.title.x = element_text(size = 16),
       axis.text.y = element_text(size = 14), axis.title.y = element_text(size = 16),
       plot.title = element_text(size = 20, face = "bold", color = "darkgreen"))
+```
 
-# ------------------------------------------------------------------
-plot(1:4,rep(1,4),pch=c("\u0111","\u01B0","\u01A1","\u0103"),cex=4)
+
+
+## vietnamese font
+
+```{r}
+plot(1:4,rep(1,4), pch=c("\u0111","\u01B0","\u01A1","\u0103"),cex=4)
+```
 
 # data.table
 
+## select 
 
 dt[dayid >= ymd(20190827),
    .(trung_binh = mean(amount_thousand),
