@@ -31,6 +31,8 @@ theme(axis.text.x = element_text(size = 14), axis.title.x = element_text(size = 
 
 ```{r}
 plot(1:4,rep(1,4), pch=c("\u0111","\u01B0","\u01A1","\u0103"),cex=4)
+# Uppercase
+plot(1:4,rep(1,4), pch=c("\U0110","\u01AF","\u01A0","\u0102"),cex=4)
 ```
 
 # data.table
