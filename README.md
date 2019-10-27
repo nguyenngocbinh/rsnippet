@@ -160,8 +160,12 @@ key(flights)
 group_by(xxx) %>% summarise(cnt = n())
 ```
 
-
-
+```{r}
+category <- enquo(category)	
+p <- df %>% 
+	group_by(!!category) %>% 
+	summarise(cnt = n())
+```
 
 # lubridate
 
