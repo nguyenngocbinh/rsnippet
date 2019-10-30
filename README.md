@@ -258,9 +258,12 @@ dfs %>% reduce(full_join)
 # Hàm xử lý outlier
 ```{r}
 f_outlier <- function(x){
-  threshold <- quantile(x, probs = c(0.01, 0.99), na.rm = TRUE, type = 3)
-  x[ x < threshold[1]] <- threshold[1]
-  x[ x > threshold[2]] <- threshold[2]
+  threshold <- quantile(x, probs = c(0.005, 0.95), na.rm = TRUE, type = 3)
+  
+  y <- case_when(x > threshold[2] ~ threshold[2],
+          x < threshold[1] ~ threshold[1],
+          TRUE ~ x) 
+  return(y)
 }
 ```
 
