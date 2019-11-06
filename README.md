@@ -167,6 +167,8 @@ category <- enquo(category)
 p <- df %>% 
 	group_by(!!category) %>% 
 	summarise(cnt = n())
+
+rlang::quo_text(cat)
 ```
 
 # lubridate
