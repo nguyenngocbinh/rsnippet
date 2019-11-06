@@ -23,6 +23,8 @@
 theme(axis.text.x = element_text(size = 14), axis.title.x = element_text(size = 16),
       axis.text.y = element_text(size = 14), axis.title.y = element_text(size = 16),
       plot.title = element_text(size = 20, face = "bold", color = "darkgreen"))
+      
+theme(axis.ticks.length.y = unit(nc * 0.15,"cm"))
 ```
 
 
