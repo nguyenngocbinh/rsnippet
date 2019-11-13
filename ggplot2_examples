@@ -30,3 +30,101 @@ theme(axis.text.x = element_text(size = 14), axis.title.x = element_text(size = 
 
 # ------------------------------------------------------------------
 plot(1:4,rep(1,4),pch=c("\u0111","\u01B0","\u01A1","\u0103"),cex=4)
+
+
+# Area plot
+ggplot(economics, aes(x=date)) +
+  geom_area(aes(y=psavert), fill = "#999999",
+            color = "#999999", alpha=0.5) +
+  geom_area(aes(y=uempmed), fill = "#E69F00",
+            color = "#E69F00", alpha=0.5) +
+  theme_minimal()
+#=============================================================================
+a + geom_density(aes(color = sex), alpha=0.4)+
+  geom_vline(data = mu, aes(xintercept = grp.mean, color=sex),
+             linetype="dashed")
+
+#=============================================================================
+# Histogram
+# Basic plot
+a + geom_histogram()
+# Change the number of bins
+a + geom_histogram(bins = 50)
+# Position adjustment: "identity" (overlaid)
+a + geom_histogram(aes(color = sex), fill = "white", alpha = 0.6,
+                   position="identity")
+
+#=============================================================================
+# Histogram with density plot
+# Color by groups
+a + geom_histogram(aes(y=..density.., color = sex, fill = sex),
+                   alpha=0.5, position="identity")+
+  geom_density(aes(color = sex), size = 1)
+
+#=============================================================================
+# Box plot with mean points
+e + geom_boxplot() +
+  stat_summary(fun.y = mean, geom = "point",
+               shape = 18, size = 4, color = "blue")
+# Change the default order of items
+e + geom_boxplot() +
+  scale_x_discrete(limits=c("2", "0.5", "1"))
+
+
+#=============================================================================
+# Add mean points +/- SD
+# Use geom = "pointrange" or geom = "crossbar"
+e + geom_violin(trim = FALSE) +
+  stat_summary(fun.data="mean_sdl", fun.args = list(mult=1),
+               geom="pointrange", color = "red")
+# Combine with box plot to add median and quartiles
+e + geom_violin(trim = FALSE) +
+  geom_boxplot(width = 0.2)
+
+#=============================================================================
+# geom_line
+# Change line types, point shapes and colors
+p + geom_line(aes(linetype=supp, color = supp))+
+  geom_point(aes(shape=supp, color = supp))
+
+#=============================================================================
+# geom_bar with labels
+require(plyr)
+# Sort by dose and supp
+df_sorted <- arrange(df2, dose, supp)
+
+# Calculate the cumulative sum of len for each dose
+df_cumsum <- ddply(df_sorted, "dose", transform,
+                   label_ypos=cumsum(len))
+
+# Create the bar plot
+ggplot(data=df_cumsum, aes(x = dose, y = len, fill = supp)) +
+  geom_bar(stat = "identity")+
+  geom_text(aes(y = label_ypos, label = len), vjust=1.6,
+            color = "white", size = 3.5)
+
+#=============================================================================
+# Basic pie charts
+df <- data.frame(
+  group = c("Male", "Female", "Child"),
+  value = c(25, 25, 50))
+
+p <- ggplot(df, aes(x="", y = value, fill=group)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0)
+
+blank_theme <- theme_minimal()+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.x=element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    plot.title=element_text(size=14, face="bold")
+  )
+
+require(scales)
+p + scale_fill_brewer("Blues") + blank_theme +
+  geom_text(aes(y = value/3 + c(0, cumsum(value)[-length(value)]),
+                label = percent(value/100)), size=5)
