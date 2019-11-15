@@ -270,5 +270,8 @@ f_outlier <- function(x){
   return(y)
 }
 ```
-
-
+# So sánh khác biệt giữa 2 file
+```{r}
+library(diffr)
+diffr("D:/TMP/new 1.txt", "D:/TMP/new 2.txt", contextSize = 0, minJumpSize = 500)
+```
