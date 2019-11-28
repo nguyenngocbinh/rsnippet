@@ -275,3 +275,13 @@ f_outlier <- function(x){
 library(diffr)
 diffr("D:/TMP/new 1.txt", "D:/TMP/new 2.txt", contextSize = 0, minJumpSize = 500)
 ```
+
+# Optical Character Recognition (OCR)
+```{r}
+if(!require("tesseract")) {install.packages("tesseract")}
+library(tesseract)
+library(dplyr)
+text <- ocr("D:/tmp/image2.png", engine = tesseract("eng"))
+cat(text)
+text %>% strsplit(split = "\n") %>% rio::export("x.xlsx")
+```
