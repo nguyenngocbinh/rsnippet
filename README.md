@@ -1,3 +1,8 @@
+# Initial
+```{r}
+install.packages("spAddins")
+install.packages("remedy")
+```
 # ggplot
 
 ## add hrbrtheme
