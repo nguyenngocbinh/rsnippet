@@ -3,6 +3,15 @@
 install.packages("spAddins")
 install.packages("remedy")
 ```
+
+# Useful website
+
+[rweekly](https://rweekly.org/)
+
+[awesome-r](https://awesome-r.com/index.html)
+
+[r-users_job](https://www.r-users.com/)
+
 # ggplot
 
 ## add hrbrtheme
