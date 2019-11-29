@@ -1,6 +1,3 @@
-
-# Update 16-Oct-2019 ------------------------------
-
 # ggplot
 
 ## add hrbrtheme
@@ -170,20 +167,22 @@ p <- df %>%
 
 rlang::quo_text(cat)
 ```
-## top_n function
+## top_n_by function
 ```{r}
-f_top_n <- function(df, n, wt){
-  wt <- enquo(wt)
+f_top_n_by <- function(df, n, top_by, grp_by){
+  top_by <- enquo(top_by) # numeric value
+  grp_by <- enquo(grp_by)
   
-  ft <- df %>% 
-    filter(is.finite(!!wt)) %>% 
-    select(!!wt) %>% 
-    pull() %>% 
+  top_val <- df %>% 
+    group_by(!!grp_by) %>% 
+    mutate(max_val = max(!!top_by, na.rm = TRUE)) %>% 
+    filter(is.finite(max_val)) %>% 
+    pull(max_val) %>% 
     unique() %>% 
     sort(decreasing = TRUE) %>% 
     head(n) 
   
-  filter(df, !!wt %in% ft) %>% return()
+  filter(df, !!top_by %in% top_val) %>% return()
 }
 ```
 
