@@ -173,16 +173,21 @@ f_top_n_by <- function(df, n, top_by, grp_by){
   top_by <- enquo(top_by) # numeric value
   grp_by <- enquo(grp_by)
   
-  top_val <- df %>% 
+  df <- df %>% 
     group_by(!!grp_by) %>% 
     mutate(max_val = max(!!top_by, na.rm = TRUE)) %>% 
-    filter(is.finite(max_val)) %>% 
+    filter(is.finite(max_val)) 
+  
+  top_val <- df %>% 
     pull(max_val) %>% 
     unique() %>% 
     sort(decreasing = TRUE) %>% 
-    head(n) 
+    head(n)   
   
-  filter(df, !!top_by %in% top_val) %>% return()
+  df %>% 
+    filter(max_val %in% top_val) %>% 
+    select(-max_val) %>% 
+    return()
 }
 ```
 
