@@ -170,6 +170,22 @@ p <- df %>%
 
 rlang::quo_text(cat)
 ```
+## top_n function
+```{r}
+f_top_n <- function(df, n, wt){
+  wt <- enquo(wt)
+  
+  ft <- df %>% 
+    filter(is.finite(!!wt)) %>% 
+    select(!!wt) %>% 
+    pull() %>% 
+    unique() %>% 
+    sort(decreasing = TRUE) %>% 
+    head(n) 
+  
+  filter(df, !!wt %in% ft) %>% return()
+}
+```
 
 # lubridate
 
