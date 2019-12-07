@@ -37,8 +37,11 @@ theme(axis.text.x = element_text(size = 14), axis.title.x = element_text(size = 
       
 theme(axis.ticks.length.y = unit(nc * 0.15,"cm"))
 ```
+## geom_line with x is factor
 
-
+```{r}
+geom_line(aes(group = 1))
+```
 
 ## vietnamese font
 
