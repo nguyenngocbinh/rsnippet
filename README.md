@@ -315,3 +315,14 @@ text <- ocr("D:/tmp/image2.png", engine = tesseract("eng"))
 cat(text)
 text %>% strsplit(split = "\n") %>% rio::export("x.xlsx")
 ```
+
+# Markdown
+## image
+![](../figures/d_i_d_graph.png)
+
+or
+
+```{r}
+knitr::opts_chunk$set(echo = FALSE, fig.height = 5, fig.width = 7, out.width = "70%")
+knitr::include_graphics("figures/d_i_d_graph.png")
+```
