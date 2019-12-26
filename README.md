@@ -318,7 +318,7 @@ text %>% strsplit(split = "\n") %>% rio::export("x.xlsx")
 
 # Markdown
 ## image
-![](../figures/d_i_d_graph.png)
+> ![](../figures/d_i_d_graph.png)
 
 or
 
