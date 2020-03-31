@@ -319,6 +319,23 @@ text %>% strsplit(split = "\n") %>% rio::export("x.xlsx")
 ```
 
 # Markdown
+## rpub
+---
+title: "Correlation analysis"
+author: "Nguyễn Ngọc Bình"
+date: "8 JUL 2019"
+output:
+  html_document: 
+    code_download: true
+    code_folding: show
+    number_sections: yes
+    theme: "default"
+    toc: TRUE
+    toc_float: TRUE
+    dev: 'svg'
+editor_options: 
+  chunk_output_type: console
+---
 ## image
 > ![](../figures/d_i_d_graph.png)
 
