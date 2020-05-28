@@ -12,6 +12,13 @@ install.packages("remedy")
 
 [r-users_job](https://www.r-users.com/)
 
+# Package repo
+
+```{r}
+options(repos = "http://cran.rstudio.org")
+# options(repos = "https://cloud.r-project.org")
+```
+
 # ggplot
 
 ## add hrbrtheme
@@ -320,25 +327,28 @@ text %>% strsplit(split = "\n") %>% rio::export("x.xlsx")
 
 # Markdown
 ## rpub
+```{r}
 ---
-title: "Correlation analysis"
-author: "Nguyễn Ngọc Bình"
-date: "8 JUL 2019"
-output:
-  html_document: 
-    code_download: true
-    code_folding: show
-    number_sections: yes
-    theme: "default"
-    toc: TRUE
-    toc_float: TRUE
-    dev: 'svg'
-editor_options: 
-  chunk_output_type: console
+# title: "Correlation analysis"
+# author: "Nguyễn Ngọc Bình"
+# date: "8 JUL 2019"
+# output:
+#   html_document: 
+#   code_download: true
+# code_folding: show
+# number_sections: yes
+# theme: "default"
+# toc: TRUE
+# toc_float: TRUE
+# dev: 'svg'
+# editor_options: 
+#   chunk_output_type: console
 ---
+```
 ## image
-> ![](../figures/d_i_d_graph.png)
-
+```{r}
+# > ![](../figures/d_i_d_graph.png)
+```
 or
 
 ```{r}
