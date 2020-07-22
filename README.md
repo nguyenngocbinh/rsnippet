@@ -20,11 +20,19 @@ options(repos = "http://cran.rstudio.org")
 ```
 
 # ggplot
+## Awesome ggplot2
+### Themes and aesthetics
+- gghighlight{Eg: gghighlight(max(value) > 19)}
+- ggsci {Eg: scale_color_palname(), scale_fill_palname()}
+- ggfittext {Eg. geom_fit_text(reflow = TRUE, grow = TRUE)}
+- hrbrtheme {Eg: scale_y_comma(), theme_ipsum_rc()}
+- bbplot {https://bbc.github.io/rcookbook/, Eg: bbc_style(), finalise_plot()}
+- ggthemr {https://github.com/cttobin/ggthemr}
 
-## add hrbrtheme
 
-  - scale_y_comma()
-  - theme_ipsum_rc() 
+
+### Presentation, composition and scales
+- tagger
 
 ## format axis
 
