@@ -37,70 +37,7 @@
 </ul>
 </div>
 
-<!----------------------------------------------------------------------------
-<div id="contents" style="position:fixed;width: 200px;right:0;top:0">
-------------------------------------------------------------------------------->
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/show-hide-console-outputs.js"></script>
-<script src="/js/floating-toc.js"></script>
-<style>
-   table {
-      width: 100%;
-      border-top: none !important; 
-      padding: 0px;
-      border-spacing: 2px;
-      margin-bottom: 0px;
-    }
-    td {
-      width: 50%;
-      text-align: left;
-    }
-    pre {
-    padding: 5px;
-    white-space: pre-wrap;
-    }
-    .hljs.shell{
-    background: #ffffff;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #a7a7a71a;
-    }
-    pre:not(.r) {
-    display: none;
-    }
-    table {
-    margin-bottom: 0px;
-    table-layout: fixed; 
-    }
-    .table {
-    margin-bottom: 0px;
-    }
-    h4 {
-    text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 0px;
-    margin-bottom: 3px;
-    }
-    hr.hr2 {
-    border: 2px solid #000000;
-    }
-    .hljs{
-    background: #a7a7a71a;
-    font-size: 80%;
-    word-wrap: break-word;
-    }
-    #TOC {
-    font-size: 12px;
-    }
-    #TOC.floating {
-    position:fixed;
-    width: 200px;
-    left:0;
-    top:0;
-    margin-top: 60px;
-    }
-</style>
+
 <!----------------------------------------------------------------------------
                 INTRODUCTION
 ------------------------------------------------------------------------------->
@@ -108,12 +45,7 @@
 <table class="table table-condensed">
 <tbody>
 <tr>
-<td align="center">
-<img src="/images/data.table.png" title="fig:" alt="data.table_logo" />
-</td>
-<td align="center">
-<img src="/images/dplyr.jpg" title="fig:" alt="dplyr_logo" />
-</td>
+
 </tr>
 </tbody>
 </table>
