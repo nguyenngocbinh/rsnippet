@@ -1,5 +1,10 @@
 
 ## dbplyr
+### list connection driver
+```{}
+odbc::odbcListDrivers()
+```
+
 ### Connect to DB
 ```{}
 library(DBI)
