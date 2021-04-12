@@ -12,11 +12,17 @@ install.packages("remedy")
 
 [r-users_job](https://www.r-users.com/)
 
-# Package repo
+# Package 
+
+### Repos
 
 ```{r}
 options(repos = "http://cran.rstudio.org")
 # options(repos = "https://cloud.r-project.org")
+```
+### Offline install package
+```{}
+install.packages(".../path/to/package.tar.gz", type="source", repos=NULL) 
 ```
 
 # ggplot
