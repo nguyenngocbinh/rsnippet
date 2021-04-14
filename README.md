@@ -67,6 +67,8 @@ geom_line(aes(group = 1))
 ## vietnamese font
 
 ```{r}
+Sys.setlocale(category = "LC_ALL", locale = "vietnamese")
+
 eval(parse("R/graph_pqr_201911.R", encoding = "UTF-8"))
 
 plot(1:4,rep(1,4), pch=c("\u0111","\u01B0","\u01A1","\u0103"),cex=4)
