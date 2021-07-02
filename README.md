@@ -76,6 +76,14 @@ plot(1:4,rep(1,4), pch=c("\u0111","\u01B0","\u01A1","\u0103"),cex=4)
 plot(1:4,rep(1,4), pch=c("\U0110","\u01AF","\u01A0","\u0102"),cex=4)
 ```
 
+# File
+
+### edit file
+```{r}
+line="blah text blah blah etc etc"
+write(line,file=paste0("vignettes/", ticker, ".Rmd"),append=TRUE)
+```
+
 # data.table
 https://atrebas.github.io/post/2019-03-03-datatable-dplyr/
 
