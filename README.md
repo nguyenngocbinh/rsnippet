@@ -90,7 +90,7 @@ https://atrebas.github.io/post/2019-03-03-datatable-dplyr/
 # dplyr
 
 ```{r}
-group_by(xxx) %>% summarise(cnt = n())
+group_by(xxx) %>% count()
 ```
 
 ```{r}
@@ -235,31 +235,47 @@ text %>% strsplit(split = "\n") %>% rio::export("x.xlsx")
 
 # Markdown
 ## rpub
-```{r}
+```{r, eval = F}
 ---
-# title: "Correlation analysis"
-# author: "Nguyễn Ngọc Bình"
-# date: "8 JUL 2019"
-# output:
-#   html_document: 
-#   code_download: true
-# code_folding: show
-# number_sections: yes
-# theme: "default"
-# toc: TRUE
-# toc_float: TRUE
-# dev: 'svg'
-# editor_options: 
-#   chunk_output_type: console
+title: "Correlation analysis"
+author: "Nguyễn Ngọc Bình"
+date: "`r format(Sys.Date(),'%Y-%m-%d')`"
+output:
+  html_document:
+  code_download: true
+code_folding: show
+number_sections: yes
+theme: "default"
+toc: TRUE
+toc_float: TRUE
+dev: 'svg'
+editor_options:
+  chunk_output_type: console
 ---
 ```
 ## image
-```{r}
-# > ![](../figures/d_i_d_graph.png)
-```
+`![](../figures/d_i_d_graph.png)
+`
+
 or
 
 ```{r}
 knitr::opts_chunk$set(echo = FALSE, fig.height = 5, fig.width = 7, out.width = "70%")
 knitr::include_graphics("figures/d_i_d_graph.png")
 ```
+### Format number in rmarkdown
+``` fnc_kbl <- function(df) {
+  df %>%
+    mutate_if(
+      is.numeric,
+      format,
+      digits = 2,
+      nsmall = 2,
+      big.mark = ".",
+      decimal.mark = ","
+    ) %>%
+    kbl() %>%
+    kable_classic(full_width = F)
+}
+```
+
