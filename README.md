@@ -64,6 +64,9 @@ theme(axis.ticks.length.y = unit(nc * 0.15,"cm"))
 geom_line(aes(group = 1))
 ```
 
+## combine graphs
+`https://cran.r-project.org/web/packages/patchwork/vignettes/patchwork.html`
+
 ## vietnamese font
 
 ```{r}
