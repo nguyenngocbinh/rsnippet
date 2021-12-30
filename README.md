@@ -281,4 +281,17 @@ knitr::include_graphics("figures/d_i_d_graph.png")
     kable_classic(full_width = F)
 }
 ```
-
+### Format table in word
+```{r}
+fnc_print_tbl_df <- function(tbl_name) {
+  out <- tbl_name %>%
+    ungroup() %>% 
+    mutate_if(is.numeric, round, 2) %>%
+    flextable() %>%
+    autofit() %>% 
+    theme_zebra(odd_header = '#8064A2') %>% 
+    font(fontname = 'Tahoma', part = 'all') %>% 
+    fontsize(size = 10, part = 'all') 
+  return(out)
+}
+```
