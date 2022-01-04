@@ -291,7 +291,8 @@ fnc_print_tbl_df <- function(tbl_name) {
     autofit() %>% 
     theme_zebra(odd_header = '#8064A2') %>% 
     font(fontname = 'Tahoma', part = 'all') %>% 
-    fontsize(size = 10, part = 'all') 
+    fontsize(size = 10, part = 'all')%>% 
+    border(border = officer::fp_border(color = "#8064A2")) 
   return(out)
 }
 ```
