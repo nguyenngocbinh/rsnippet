@@ -47,3 +47,7 @@ ggplot(count.data, aes(x = 2, y = prop, fill = class)) +
   theme_void()+
   xlim(0.5, 2.5)
 ```
+# gganimate .gif
+```
+https://github.com/thomasp85/gganimate
+```
