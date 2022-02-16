@@ -245,13 +245,13 @@ author: "Nguyễn Ngọc Bình"
 date: "`r format(Sys.Date(),'%Y-%m-%d')`"
 output:
   html_document:
-  code_download: true
-code_folding: show
-number_sections: yes
-theme: "default"
-toc: TRUE
-toc_float: TRUE
-dev: 'svg'
+    code_download: true
+    code_folding: show
+    number_sections: yes
+    theme: "default"
+    toc: TRUE
+    toc_float: TRUE
+    dev: 'svg'
 editor_options:
   chunk_output_type: console
 ---
@@ -295,4 +295,9 @@ fnc_print_tbl_df <- function(tbl_name) {
     border(border = officer::fp_border(color = "#8064A2")) 
   return(out)
 }
+```
+
+### import data
+```{r}
+rio::import(xml2::xml2_example("cd_catalog.xml"))
 ```
