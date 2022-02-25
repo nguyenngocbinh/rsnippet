@@ -92,6 +92,14 @@ https://atrebas.github.io/post/2019-03-03-datatable-dplyr/
 
 # dplyr
 
+```r
+# select na vars
+fnc_na_vars <- function(x) {any(is.na(x))}
+na_vars <- dt %>%
+  select_if(fnc_na_vars) %>% 
+  names() 
+```
+
 ```{r}
 group_by(xxx) %>% count()
 ```
