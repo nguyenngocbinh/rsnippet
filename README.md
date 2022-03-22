@@ -110,7 +110,10 @@ p <- df %>%
 	group_by(!!category) %>% 
 	summarise(cnt = n())
 
-rlang::quo_text(cat)
+rlang::quo_text(category)
+
+.var <- sym(.symbol)
+
 ```
 ## top_n_by function
 ```{r}
