@@ -271,9 +271,9 @@ editor_options:
 `![](../figures/d_i_d_graph.png)
 `
 
-bookdown::html_document2
+bookdown::html_document2, bookdown::word_document2
 ```{r}
-![(#fig:nnet2)Một mạng nơ-ron với bốn đầu vào và một lớp ẩn với ba nơ-ron ẩn.](images/nnet2.png)
+![(\#fig:nnet2)Một mạng nơ-ron với bốn đầu vào và một lớp ẩn với ba nơ-ron ẩn.](images/nnet2.png)
 \@ref(fig:nnet2)
 ```
 or
