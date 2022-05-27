@@ -317,3 +317,10 @@ fnc_print_tbl_df <- function(tbl_name) {
 ```{r}
 rio::import(xml2::xml2_example("cd_catalog.xml"))
 ```
+
+### Reticulate 
+
+```
+file.edit(file.path("~", ".Rprofile"))
+# RETICULATE_PYTHON="C/Users/nguye/anaconda3"
+```
